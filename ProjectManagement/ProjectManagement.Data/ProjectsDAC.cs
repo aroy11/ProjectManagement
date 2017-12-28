@@ -18,6 +18,16 @@ namespace ProjectManagement.Data
             return resultsList;
         }
 
+        public Project SelectProject(int projectId)
+        {
+            Project project = null;
+
+            ProjectManagementEntities ctx = ProjectManagementEntities.Context;
+            project = ctx.Projects.FirstOrDefault(x => x.Project_ID == projectId);
+
+            return project;
+        }
+
         public IEnumerable<Project> SelectByName(string projectName)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;
