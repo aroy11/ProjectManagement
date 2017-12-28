@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{238B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.API", "ProjectManagement.API\ProjectManagement.API.csproj", "{F9AC4538-8064-4681-AC8E-6F336554AB01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Business", "ProjectManagement.Business\ProjectManagement.Business.csproj", "{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{F9AC4538-8064-4681-AC8E-6F336554AB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9AC4538-8064-4681-AC8E-6F336554AB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9AC4538-8064-4681-AC8E-6F336554AB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +65,6 @@ Global
 		{AC4F15E9-B37E-42C0-BC03-A4E44C3D067C} = {1645B311-9B6C-4C2A-AEEF-FCC06DDCFE19}
 		{FB731552-ACBE-4604-A296-9068961FEBBB} = {1645B311-9B6C-4C2A-AEEF-FCC06DDCFE19}
 		{F9AC4538-8064-4681-AC8E-6F336554AB01} = {238BD136-9528-4A19-B319-E74103388DB2}
+		{3DAB88BC-6F4B-4D54-90D1-C4C0BA6D404C} = {EC576766-CEE2-4BDC-A56D-601ECD0D6D0D}
 	EndGlobalSection
 EndGlobal
