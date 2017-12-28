@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.UnitTests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{EC576766-CEE2-4BDC-A56D-601ECD0D6D0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Business.Entities", "ProjectManagement.Business.Entities\ProjectManagement.Business.Entities.csproj", "{AC4F15E9-B37E-42C0-BC03-A4E44C3D067C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Entities", "ProjectManagement.Business.Entities\ProjectManagement.Entities.csproj", "{AC4F15E9-B37E-42C0-BC03-A4E44C3D067C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{18301CB9-B44B-419A-876D-79DA4675CD79}"
 EndProject

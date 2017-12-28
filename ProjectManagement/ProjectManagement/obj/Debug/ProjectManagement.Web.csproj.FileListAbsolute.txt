@@ -32,7 +32,6 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\Microsoft.Owin.
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\Microsoft.Web.Infrastructure.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\Newtonsoft.Json.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\Owin.dll
-C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\ProjectManagement.Business.Entities.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Net.Http.Formatting.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.Helpers.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.Http.dll
@@ -45,7 +44,6 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.WebP
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.WebPages.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.WebPages.Razor.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\WebGrease.dll
-C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\ProjectManagement.Business.Entities.pdb
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\Antlr3.Runtime.pdb
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\EntityFramework.xml
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\EntityFramework.SqlServer.xml
@@ -77,3 +75,5 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\System.Web.WebP
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.Web.csprojResolveAssemblyReference.cache
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\obj\Debug\ProjectManagement.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\ProjectManagement.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement\bin\ProjectManagement.Entities.pdb

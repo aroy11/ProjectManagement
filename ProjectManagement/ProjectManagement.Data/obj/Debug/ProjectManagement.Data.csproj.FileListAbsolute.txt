@@ -4,5 +4,5 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\Proj
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Data.pdb
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\obj\Debug\ProjectManagement.Data.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\obj\Debug\ProjectManagement.Data.pdb
-C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Business.Entities.dll
-C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Business.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Entities.pdb

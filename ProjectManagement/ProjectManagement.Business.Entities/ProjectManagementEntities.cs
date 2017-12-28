@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace ProjectManagement.Business.Entities
+namespace ProjectManagement.Entities
 {
     public partial class ProjectManagementEntities
     {

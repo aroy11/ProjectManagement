@@ -1,0 +1,7 @@
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Entities.dll.config
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\EntityFramework.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\EntityFramework.xml
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Entities.pdb

@@ -307,9 +307,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectManagement.Business.Entities\ProjectManagement.Business.Entities.csproj">
+    <ProjectReference Include="..\ProjectManagement.Business.Entities\ProjectManagement.Entities.csproj">
       <Project>{ac4f15e9-b37e-42c0-bc03-a4e44c3d067c}</Project>
-      <Name>ProjectManagement.Business.Entities</Name>
+      <Name>ProjectManagement.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -19,14 +19,14 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Task_Parent_ID", "ParentTask", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Business.Entities.ParentTask), "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Business.Entities.Task), true)]
-[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Task_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Business.Entities.Project), "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Business.Entities.Task), true)]
-[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Business.Entities.Project), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Business.Entities.User), true)]
-[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Task_ID", "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Business.Entities.Task), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Business.Entities.User), true)]
+[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Task_Parent_ID", "ParentTask", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.ParentTask), "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.Task), true)]
+[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Task_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Project), "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.Task), true)]
+[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Project), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.User), true)]
+[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Task_ID", "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Task), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.User), true)]
 
 #endregion
 
-namespace ProjectManagement.Business.Entities
+namespace ProjectManagement.Entities
 {
     #region Contexts
     

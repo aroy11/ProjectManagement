@@ -57,9 +57,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectManagement.Business.Entities\ProjectManagement.Business.Entities.csproj">
+    <ProjectReference Include="..\ProjectManagement.Business.Entities\ProjectManagement.Entities.csproj">
       <Project>{AC4F15E9-B37E-42C0-BC03-A4E44C3D067C}</Project>
-      <Name>ProjectManagement.Business.Entities</Name>
+      <Name>ProjectManagement.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

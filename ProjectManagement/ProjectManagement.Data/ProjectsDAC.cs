@@ -1,4 +1,4 @@
-﻿using ProjectManagement.Business.Entities;
+﻿using ProjectManagement.Entities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
