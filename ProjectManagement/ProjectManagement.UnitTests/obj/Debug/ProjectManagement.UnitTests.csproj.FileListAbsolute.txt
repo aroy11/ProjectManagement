@@ -1,0 +1,9 @@
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\ProjectManagement.UnitTests.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\ProjectManagement.UnitTests.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\nunit.framework.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\nunit.framework.xml
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\obj\Debug\ProjectManagement.UnitTests.csprojResolveAssemblyReference.cache
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\obj\Debug\ProjectManagement.UnitTests.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.UnitTests\obj\Debug\ProjectManagement.UnitTests.pdb

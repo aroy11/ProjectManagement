@@ -1,0 +1,8 @@
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Business.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Business.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Business.Entities.csprojResolveAssemblyReference.cache
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Business.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Business.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\ProjectManagement.Business.Entities.dll.config
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\EntityFramework.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\EntityFramework.xml

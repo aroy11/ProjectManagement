@@ -1,0 +1,8 @@
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\obj\Debug\ProjectManagement.Data.csprojResolveAssemblyReference.cache
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Data.dll.config
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Data.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Data.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\obj\Debug\ProjectManagement.Data.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\obj\Debug\ProjectManagement.Data.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Business.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Data\bin\Debug\ProjectManagement.Business.Entities.pdb
