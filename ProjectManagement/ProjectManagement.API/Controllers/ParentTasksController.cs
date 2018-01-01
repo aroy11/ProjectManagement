@@ -21,16 +21,16 @@ namespace ProjectManagement.API.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class ParentTasksController : ApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        public ParentTasksController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager,
+        public ParentTasksController(ApplicationUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             UserManager = userManager;

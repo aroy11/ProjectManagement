@@ -12,7 +12,7 @@ namespace ProjectManagement.Data
         {
             List<Project> resultsList = null;
 
-            ProjectManagementEntities ctx = ProjectManagementEntities.Context;
+            ProjectManagementEntities ctx = new ProjectManagementEntities();
             resultsList = ctx.Projects.ToList();
 
             return resultsList;
@@ -53,6 +53,29 @@ namespace ProjectManagement.Data
 
             return project;
         }
+
+        public Project Update(int id, Project project)
+        {
+            ProjectManagementEntities ctx = ProjectManagementEntities.Context;
+            Project proj = null;
+            try
+            {
+                proj = ctx.Projects.FirstOrDefault(x => x.Project_ID == id);
+                proj.Project_Name = project.Project_Name;
+                proj.Start_Date = project.Start_Date;
+                proj.End_Date = project.End_Date;
+                proj.Priority = project.Priority;
+                ctx.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+
+            return proj;
+        }
+
         public void Delete(int Id)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;

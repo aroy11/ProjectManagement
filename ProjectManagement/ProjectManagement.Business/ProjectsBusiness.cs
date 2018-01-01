@@ -1,8 +1,6 @@
 ﻿using ProjectManagement.Data;
 using ProjectManagement.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjectManagement.Business
 {
@@ -47,6 +45,17 @@ namespace ProjectManagement.Business
 
             return newProject;
         }
+
+        public Project UpdateProject(int id, Project project)
+        {
+            Project newProject = null;
+
+            ProjectsDAC projectsData = new ProjectsDAC();
+            newProject = projectsData.Update(id, project);
+
+            return newProject;
+        }
+
         public void DeleteProject(int ID)
         {
             ProjectsDAC projectsData = new ProjectsDAC();

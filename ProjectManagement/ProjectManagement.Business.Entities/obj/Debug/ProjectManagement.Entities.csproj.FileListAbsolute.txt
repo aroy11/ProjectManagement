@@ -5,3 +5,4 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\b
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\bin\Debug\EntityFramework.xml
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Entities.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.Business.Entities\obj\Debug\ProjectManagement.Entities.csprojResolveAssemblyReference.cache

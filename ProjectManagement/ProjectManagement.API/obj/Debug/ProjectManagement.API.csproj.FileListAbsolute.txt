@@ -88,3 +88,9 @@ C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\System.Web.
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\obj\Debug\ProjectManagement.API.csprojResolveAssemblyReference.cache
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\obj\Debug\ProjectManagement.API.dll
 C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\obj\Debug\ProjectManagement.API.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Entities.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Entities.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Business.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Data.dll
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Business.pdb
+C:\FSD\ProjectManagement\ProjectManagement\ProjectManagement.API\bin\ProjectManagement.Data.pdb

@@ -6,7 +6,7 @@ namespace ProjectManagement.Business
 {
     public class UsersBusiness
     {
-        public IEnumerable<User> GetProjects()
+        public IEnumerable<User> GetUsers()
         {
             IEnumerable<User> resultsList = null;
 

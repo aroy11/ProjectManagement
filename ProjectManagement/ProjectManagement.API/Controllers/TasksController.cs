@@ -7,8 +7,7 @@ using System.Web.Http;
 
 namespace ProjectManagement.API.Controllers
 {
-    [Authorize]
-    public class ValuesController : ApiController
+    public class TasksController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
