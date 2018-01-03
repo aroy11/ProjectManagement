@@ -1,7 +1,11 @@
-﻿using Microsoft.Owin;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ProjectManagement.Web.Startup))]
+[assembly: OwinStartup(typeof(ProjectManagement.Web.Startup))]
+
 namespace ProjectManagement.Web
 {
     public partial class Startup
