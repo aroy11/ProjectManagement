@@ -231,38 +231,52 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\ai.0.22.9-build00167.js" />
-    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-route.js" />
-    <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="includes\header.html" />
+    <Content Include="Scripts\lib\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\lib\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\lib\angular-mocks.js" />
+    <Content Include="Scripts\lib\angular-route.js" />
+    <Content Include="Scripts\lib\angular-route.min.js" />
+    <Content Include="Scripts\lib\angular.js" />
+    <Content Include="Scripts\lib\angular.min.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\angular-route.min.js.map" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\knockout-2.3.0.debug.js" />
-    <Content Include="Scripts\knockout-2.3.0.js" />
-    <Content Include="Scripts\knockout.validation.debug.js" />
-    <Content Include="Scripts\knockout.validation.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\sammy-0.7.4.js" />
-    <Content Include="Scripts\sammy-0.7.4.min.js" />
-    <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\app\_run.js" />
-    <Content Include="Scripts\app\app.datamodel.js" />
-    <Content Include="Scripts\app\app.viewmodel.js" />
-    <Content Include="Scripts\app\common.js" />
-    <Content Include="Scripts\app\home.viewmodel.js" />
+    <Content Include="Scripts\lib\angular.min.js.map" />
+    <Content Include="Scripts\lib\angular-route.min.js.map" />
+    <Content Include="Scripts\app.module.js" />
+    <None Include="Scripts\lib\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\lib\jquery-1.10.2.js" />
+    <Content Include="Scripts\lib\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\lib\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-2.3.0.js" />
+    <Content Include="Scripts\lib\knockout.validation.debug.js" />
+    <Content Include="Scripts\lib\knockout.validation.js" />
+    <Content Include="Scripts\lib\modernizr-2.6.2.js" />
+    <Content Include="Scripts\lib\respond.js" />
+    <Content Include="Scripts\lib\respond.min.js" />
+    <Content Include="Scripts\lib\sammy-0.7.4.js" />
+    <Content Include="Scripts\lib\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\lib\_references.js" />
+    <Content Include="Scripts\lib\_run.js" />
+    <Content Include="Scripts\lib\app.datamodel.js" />
+    <Content Include="Scripts\lib\app.viewmodel.js" />
+    <Content Include="Scripts\lib\common.js" />
+    <Content Include="Scripts\lib\home.viewmodel.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\project\project.controllers.js" />
+    <Content Include="Scripts\task\task.app.js" />
+    <Content Include="Scripts\task\task.controllers.js" />
+    <Content Include="Scripts\user\user.app.js" />
+    <Content Include="Scripts\user\user.controllers.js" />
+    <Content Include="Scripts\viewtask\viewtask.app.js" />
+    <Content Include="Scripts\viewtask\viewtask.controllers.js" />
+    <Content Include="templates\add-edit-project.html" />
+    <Content Include="templates\add-edit-task.html" />
+    <Content Include="templates\add-edit-user.html" />
+    <Content Include="templates\view-task.html" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Web.config">
@@ -277,8 +291,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Scripts\project\project.app.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Models\" />
@@ -290,7 +306,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\lib\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectManagement.Business.Entities\ProjectManagement.Entities.csproj">

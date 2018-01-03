@@ -1,13 +1,32 @@
 ﻿@{
     Layout = null;
 }
+
 <!DOCTYPE html>
-<html>
+
+<html ng-app="projectManagement">
 <head>
     <title></title>
-    <meta charset="utf-8" />
 </head>
-<body>
-    Test App
+<body ng-controller="baseController">
+    <header ng-include src="'includes/Header.html'"></header>
+    <section>
+        <div>
+            <div ng-view></div>
+        </div>
+    </section>
+
+    <script src="Scripts/lib/angular.min.js"></script>
+    <script src="Scripts/app.module.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/lib/angular-route.min.js"></script>
+    <script src="Scripts/project/project.app.js"></script>
+    <script src="Scripts/project/project.controllers.js"></script>
+    <script src="Scripts/task/task.app.js"></script>
+    <script src="Scripts/task/task.controllers.js"></script>
+    <script src="Scripts/user/user.app.js"></script>
+    <script src="Scripts/user/user.controllers.js"></script>
+    <script src="Scripts/viewtask/viewtask.app.js"></script>
+    <script src="Scripts/viewtask/viewtask.controllers.js"></script>
 </body>
 </html>
