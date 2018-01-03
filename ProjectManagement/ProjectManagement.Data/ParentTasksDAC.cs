@@ -53,6 +53,26 @@ namespace ProjectManagement.Data
 
             return task;
         }
+
+        public ParentTask Update(int id, ParentTask pTask)
+        {
+            ProjectManagementEntities ctx = ProjectManagementEntities.Context;
+            ParentTask parentTask = null;
+            try
+            {
+                parentTask = ctx.ParentTasks.FirstOrDefault(x => x.Parent_ID == id);
+                parentTask.Parent_Task = pTask.Parent_Task;
+                ctx.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+
+            return parentTask;
+        }
+
         public void Delete(int Id)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;

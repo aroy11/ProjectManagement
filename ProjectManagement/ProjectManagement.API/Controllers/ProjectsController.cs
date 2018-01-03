@@ -34,6 +34,7 @@ namespace ProjectManagement.API.Controllers
             catch
             {
                 status = false;
+                throw;
             }
 
             return status;

@@ -44,6 +44,16 @@ namespace ProjectManagement.Business
             return parentTask;
         }
 
+        public ParentTask UpdateParentTask(int id, ParentTask project)
+        {
+            ParentTask newProject = null;
+
+            ParentTasksDAC projectsData = new ParentTasksDAC();
+            newProject = projectsData.Update(id, project);
+
+            return newProject;
+        }
+
         public void DeleteParentTask(int ID)
         {
             ParentTasksDAC parentTasksData = new ParentTasksDAC();
