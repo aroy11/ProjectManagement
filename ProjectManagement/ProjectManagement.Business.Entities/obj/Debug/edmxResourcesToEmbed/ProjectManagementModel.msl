@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="ProjectManagementModel.Project">
         <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
           <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
           <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
           <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />

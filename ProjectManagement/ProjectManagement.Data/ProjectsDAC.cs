@@ -65,6 +65,7 @@ namespace ProjectManagement.Data
                 proj.Start_Date = project.Start_Date;
                 proj.End_Date = project.End_Date;
                 proj.Priority = project.Priority;
+                proj.Manager = project.Manager;
                 ctx.SaveChanges();
             }
             catch (Exception ex)

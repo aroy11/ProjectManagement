@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var projectManagementApp = angular.module('projectManagement', ['ngRoute', 'app.project', 'app.task', 'app.user', 'app.viewtask']);
+    var projectManagementApp = angular.module('projectManagement', ['ngRoute', 'apiCall', 'app.project', 'app.task', 'app.user', 'app.viewtask']);
 
     projectManagementApp.config(function ($routeProvider) {
         $routeProvider

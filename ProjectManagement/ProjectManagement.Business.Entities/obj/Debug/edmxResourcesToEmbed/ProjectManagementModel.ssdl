@@ -16,6 +16,7 @@
     <Property Name="Start_Date" Type="date" />
     <Property Name="End_Date" Type="date" />
     <Property Name="Priority" Type="int" />
+    <Property Name="Manager" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Task">
     <Key>
@@ -41,6 +42,18 @@
     <Property Name="Project_ID" Type="int" />
     <Property Name="Task_ID" Type="int" />
   </EntityType>
+  <Association Name="FK_Project_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Project1" Type="Self.Project" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="Project1">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Task_Parent_ID">
     <End Role="ParentTask" Type="Self.ParentTask" Multiplicity="0..1" />
     <End Role="Task" Type="Self.Task" Multiplicity="*" />
@@ -94,6 +107,10 @@
     <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Project_Project" Association="Self.FK_Project_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Project1" EntitySet="Project" />
+    </AssociationSet>
     <AssociationSet Name="FK_Task_Parent_ID" Association="Self.FK_Task_Parent_ID">
       <End Role="ParentTask" EntitySet="ParentTask" />
       <End Role="Task" EntitySet="Task" />

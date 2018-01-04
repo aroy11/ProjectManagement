@@ -13,6 +13,7 @@
         <AssociationConnector Association="ProjectManagementModel.FK_Task_Project_ID" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectManagementModel.FK_User_Project_ID" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectManagementModel.FK_User_Task_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectManagementModel.FK_Project_Project" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

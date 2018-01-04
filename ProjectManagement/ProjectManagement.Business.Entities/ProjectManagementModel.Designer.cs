@@ -23,6 +23,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Task_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Project), "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.Task), true)]
 [assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Project_ID", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Project), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.User), true)]
 [assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_User_Task_ID", "Task", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Task), "User", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjectManagement.Entities.User), true)]
+[assembly: EdmRelationshipAttribute("ProjectManagementModel", "FK_Project_Project", "Project", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjectManagement.Entities.Project), "Project1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjectManagement.Entities.Project), true)]
 
 #endregion
 
@@ -435,6 +436,30 @@ namespace ProjectManagement.Entities
         private Nullable<global::System.Int32> _Priority;
         partial void OnPriorityChanging(Nullable<global::System.Int32> value);
         partial void OnPriorityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Manager
+        {
+            get
+            {
+                return _Manager;
+            }
+            set
+            {
+                OnManagerChanging(value);
+                ReportPropertyChanging("Manager");
+                _Manager = StructuralObject.SetValidValue(value, true, "Manager");
+                ReportPropertyChanged("Manager");
+                OnManagerChanged();
+            }
+        }
+        private global::System.String _Manager;
+        partial void OnManagerChanging(global::System.String value);
+        partial void OnManagerChanged();
 
         #endregion
 
@@ -480,6 +505,82 @@ namespace ProjectManagement.Entities
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("ProjectManagementModel.FK_User_Project_ID", "User", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectManagementModel", "FK_Project_Project", "Project1")]
+        public Project Project1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project1").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project1").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Project> Project1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project1");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project1", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ProjectManagementModel", "FK_Project_Project", "Project")]
+        public Project Project2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Project> Project2Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Project>("ProjectManagementModel.FK_Project_Project", "Project", value);
                 }
             }
         }

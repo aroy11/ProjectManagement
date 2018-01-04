@@ -232,6 +232,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="includes\header.html" />
+    <Content Include="Scripts\apiCall\apiCall.app.js" />
+    <Content Include="Scripts\apiCall\apiCall.services.js" />
     <Content Include="Scripts\lib\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\lib\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\lib\angular-mocks.js" />

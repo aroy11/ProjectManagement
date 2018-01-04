@@ -19,6 +19,9 @@
     <Property Name="Priority" Type="Int32" />
     <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Project_ID" FromRole="Project" ToRole="Task" />
     <NavigationProperty Name="Users" Relationship="Self.FK_User_Project_ID" FromRole="Project" ToRole="User" />
+    <Property Name="Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Project1" Relationship="ProjectManagementModel.FK_Project_Project" FromRole="Project" ToRole="Project1" />
+    <NavigationProperty Name="Project2" Relationship="ProjectManagementModel.FK_Project_Project" FromRole="Project1" ToRole="Project" />
   </EntityType>
   <EntityType Name="Task">
     <Key>
@@ -118,5 +121,21 @@
       <End Role="Task" EntitySet="Tasks" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
+    <AssociationSet Name="FK_Project_Project" Association="ProjectManagementModel.FK_Project_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Project1" EntitySet="Projects" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Project_Project">
+    <End Type="ProjectManagementModel.Project" Role="Project" Multiplicity="1" />
+    <End Type="ProjectManagementModel.Project" Role="Project1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Project_ID" />
+      </Principal>
+      <Dependent Role="Project1">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
