@@ -261,6 +261,7 @@
     <Content Include="Scripts\lib\respond.min.js" />
     <Content Include="Scripts\lib\sammy-0.7.4.js" />
     <Content Include="Scripts\lib\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\lib\ui-bootstrap-tpls-2.5.0.min.js" />
     <Content Include="Scripts\lib\_references.js" />
     <Content Include="Scripts\lib\_run.js" />
     <Content Include="Scripts\lib\app.datamodel.js" />

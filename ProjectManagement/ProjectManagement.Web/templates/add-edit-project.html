@@ -1,8 +1,8 @@
-﻿<form class="form-horizontal" ng-submit="AddUpdateProject()" role="form">
+﻿<form class="form-horizontal" ng-submit="AddUpdateProject()" role="form" name="addEditProjectForm">
     <div class="form-group">
         <label for="projectdescription" class="col-sm-3 control-label">Project:</label>
         <div class="col-sm-6">
-            <input type="text" id="projectdescription" class="form-control" ng-model="project.projectDescription" required/>
+            <input type="text" id="projectdescription" class="form-control" ng-model="project.projectDescription" required />
         </div>
         <div class="col-sm-3"></div>
     </div>
@@ -11,15 +11,15 @@
         </div>
         <div class="input-group col-sm-3">
             <span class="input-group-addon">
-                <input type="checkbox" id="setdates" name="setdates" ng-model="project.isSetDates">
+                <input type="checkbox" id="setdates" name="setdates" ng-change="SetDefaultDates()" ng-model="project.isSetDates">
             </span>
             <label for="setdates" class="form-control">Set Start and End Date</label>
         </div>
         <div class="col-sm-2">
-            <input type="date" id="startDate" class="form-control" ng-disabled="!project.isSetDates" ng-model="project.startDate" />
+            <input type="date" id="startDate" class="form-control" ng-disabled="!project.isSetDates" ng-model="project.startDate" ng-required="project.isSetDates" />
         </div>
         <div class="col-sm-2">
-            <input type="date" id="endDate" class="form-control" ng-disabled="!project.isSetDates" ng-model="project.endDate" />
+            <input type="date" id="endDate" class="form-control" ng-disabled="!project.isSetDates" ng-model="project.endDate" ng-required="project.isSetDates" />
         </div>
     </div>
     <div class="form-group">
@@ -34,7 +34,7 @@
         <div class="input-group col-sm-6">
             <input type="text" id="manager" class="search-query form-control" ng-disabled="true" ng-model="project.manager" />
             <span class="input-group-btn">
-                <button class="btn btn-danger" type="button">
+                <button class="btn btn-danger" ng-click="open()" type="button">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
             </span>
@@ -49,9 +49,15 @@
         <input type="text" id="manager" class="search-query form-control" placeholder="Search..." ng-model="project.searchKeyword" />
     </div>
 </div>
+<div class="container">
+    <label class="control-label">Sort By:</label>
+    <button class="btn btn-primary" ng-click="Order('0')">Start Date</button>
+    <button class="btn btn-primary" ng-click="Order('1')">End Date</button>
+    <button class="btn btn-primary" ng-click="Order('2')">Priority</button>
+</div>
 
 <ul class="list-group" id="projectslist">
-    <li class="list-group-item" >
+    <li class="list-group-item">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -86,3 +92,25 @@
         </div>
     </li>
 </ul>
+
+<div class="col-sm-2">{{selectedManager}}</div>
+
+<div ng-controller="projectController as $ctrl">
+    <script type="text/ng-template" id="selectManagerModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select a user as manager:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in $ctrl.items">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected manager: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        </div>
+    </script>
+</div>
+

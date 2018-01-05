@@ -82,14 +82,14 @@
 
                             var self = this;
                             self.reqCount++;
-                            this.showLoadingIndicator();
-                            this.setPopupTextMsg();
+                            //this.showLoadingIndicator();
+                            //this.setPopupTextMsg();
                             $http(httpConfig)
 
                             .then(function (response) { //Success function
                                 self.reqCount--;
                                 if (!self.reqCount) {
-                                    self.hideLoadingIndicator();
+                                    //self.hideLoadingIndicator();
                                 }
 
                                 if (response.data.ResponseCode == -1 && response.data.ResponseMessage != '-1') {
@@ -101,10 +101,10 @@
                                     //if message is un-available show default error message
                                     if ((!response.data.ResponseMessage || response.data.ResponseMessage.length === 0) && response.data.ResponseMessage != '-1') {
                                         //angular.element('.error-dialog-box').removeClass('error-popup-hide');
-                                        self.showErrorPopup();
+                                        //self.showErrorPopup();
                                     }
                                     else if (typeof parseJson.getJson(response.data.ResponseMessage) == 'string' && response.data.ResponseMessage != 'Session Expired') {
-                                        self.showErrorPopup(response.data.ResponseMessage);
+                                        //self.showErrorPopup(response.data.ResponseMessage);
                                     }
                                 }
 

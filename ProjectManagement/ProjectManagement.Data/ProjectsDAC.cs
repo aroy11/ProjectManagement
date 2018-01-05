@@ -39,10 +39,22 @@ namespace ProjectManagement.Data
         public Project Create(Project project)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;
-
+            Project proj = null;
             try
             {
-                ctx.Projects.AddObject(project);
+                if (!ctx.Projects.Any(x => x.Project_ID == project.Project_ID))
+                {
+                    ctx.Projects.AddObject(project);
+                }
+                else
+                {
+                    proj = ctx.Projects.FirstOrDefault(x => x.Project_ID == project.Project_ID);
+                    proj.Project_Name = project.Project_Name;
+                    proj.Start_Date = project.Start_Date;
+                    proj.End_Date = project.End_Date;
+                    proj.Priority = project.Priority;
+                    proj.Manager = project.Manager;
+                }
                 ctx.SaveChanges();
             }
             catch (Exception ex)
