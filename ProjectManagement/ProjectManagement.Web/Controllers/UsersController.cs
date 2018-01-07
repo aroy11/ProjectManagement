@@ -14,25 +14,31 @@ namespace ProjectManagement.API.Controllers
             return userBusiness.GetUsers();
         }
 
-        // GET: api/Users/5
-        public User Get(int id)
-        {
-            return new User();
-        }
 
         // POST: api/Users
-        public void Post([FromBody]string value)
+        public bool Post([FromBody]User value)
         {
-        }
+            bool status = false;
+            try
+            {
+                UsersBusiness usersBusiness = new UsersBusiness();
+                usersBusiness.CreateUser(value);
+                status = true;
+            }
+            catch
+            {
+                status = false;
+                throw;
+            }
 
-        // PUT: api/Users/5
-        public void Put(int id, [FromBody]string value)
-        {
+            return status;
         }
 
         // DELETE: api/Users/5
         public void Delete(int id)
         {
+            UsersBusiness usersBusiness = new UsersBusiness();
+            usersBusiness.DeleteUser(id);
         }
     }
 }

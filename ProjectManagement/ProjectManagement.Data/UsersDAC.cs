@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectManagement.Data
 {
@@ -33,10 +31,20 @@ namespace ProjectManagement.Data
         public User Create(User user)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;
-
+            User editedUser = null;
             try
             {
-                ctx.Users.AddObject(user);
+                if (!ctx.Users.Any(x => x.User_ID == user.User_ID))
+                {
+                    ctx.Users.AddObject(user);
+                }
+                else
+                {
+                    editedUser = ctx.Users.FirstOrDefault(x => x.User_ID == user.User_ID);
+                    editedUser.First_Name = user.First_Name;
+                    editedUser.Last_Name = user.Last_Name;
+                    editedUser.Employee_ID = user.Employee_ID;
+                }
                 ctx.SaveChanges();
             }
             catch (Exception ex)

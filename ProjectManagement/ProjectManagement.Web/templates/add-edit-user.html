@@ -1,1 +1,56 @@
-﻿<div>add user</div>
+﻿<form class="form-horizontal" ng-submit="AddEditUser()" role="form" name="addEditUserForm">
+    <div class="form-group">
+        <label for="firstName" class="col-sm-3 control-label">First Name:</label>
+        <div class="col-sm-6">
+            <input type="text" id="firstName" class="form-control" ng-model="user.firstName" required />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-group">
+        <label for="lastName" class="col-sm-3 control-label">Last Name:</label>
+        <div class="col-sm-6">
+            <input type="text" id="lastName" class="form-control" ng-model="user.lastName" required />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-group">
+        <label for="employeeId" class="col-sm-3 control-label">Employee ID:</label>
+        <div class="col-sm-6">
+            <input type="text" id="employeeId" class="form-control" ng-model="user.employeeId" required />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <input type="submit" value="{{user.submitLabel}}" class="btn btn-primary col-sm-offset-3" />
+    <input type="reset" value="Reset" ng-click="ResetClick()" class="btn" /> <br />
+</form>
+<hr>
+<div>
+    <div class="input-group col-sm-12">
+        <input type="text" id="manager" class="search-query form-control" placeholder="Search..." ng-model="user.searchKeyword" />
+    </div>
+</div>
+<div class="container">
+    <label class="control-label">Sort By:</label>
+    <button class="btn btn-primary" ng-click="Order('0')">First Name</button>
+    <button class="btn btn-primary" ng-click="Order('1')">Last Name</button>
+    <button class="btn btn-primary" ng-click="Order('2')">Id</button>
+</div>
+
+<ul class="list-group" id="userslist">
+    <li class="list-group-item" ng-repeat="user in users | filter: user.searchKeyword">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2">{{user.first_Name}}</div>
+                    <div class="col-sm-2">{{user.last_Name}}</div>
+                    <div class="col-sm-2">{{user.employee_ID}}</div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="button" ng-click="EditUser(user)">Edit</button>
+                    <button class="btn btn-primary" type="button" ng-click="DeleteUser(user)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
