@@ -1,4 +1,144 @@
-﻿
-<div>
-    add task
+﻿<form class="form-horizontal" ng-submit="AddUpdateTask()" role="form" name="addEditTaskForm">
+    <div class="form-group">
+        <label for="project" class="col-sm-3 control-label">Project:</label>
+        <div class="input-group col-sm-6">
+            <input type="text" id="project" class="search-query form-control" ng-disabled="true" ng-model="task.project" required />
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="openProject()" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="taskDescription" class="col-sm-3 control-label">Task:</label>
+        <div class="col-sm-6">
+            <input type="text" id="taskDescription" class="form-control" ng-model="task.taskDescription" required />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-3">
+        </div>
+        <div class="input-group col-sm-3">
+            <span class="input-group-addon">
+                <input type="checkbox" id="isParent" name="isParent" ng-model="task.isParentTask">
+            </span>
+            <label for="isParent" class="form-control">Is Parent Task?</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="priority" class="col-sm-3 control-label">Priority:</label>
+        <div class="col-sm-6">
+            <input type="range" id="priority" min="0" max="30" step="1" value="0" ng-model="task.priority" ng-disabled="task.isParentTask"/>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-group">
+        <label for="parentTask" class="col-sm-3 control-label">Parent Task:</label>
+        <div class="input-group col-sm-6">
+            <input type="text" id="parentTask" class="search-query form-control" ng-disabled="true" ng-model="task.parentTask" />
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="openTask()" type="button" ng-disabled="task.isParentTask">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="startDate" class="col-sm-3 control-label">Start Date:</label>
+        <div class="col-sm-2">
+            <input type="date" id="startDate" class="form-control" ng-model="task.startDate" ng-disabled="task.isParentTask" required />
+        </div>
+        <label for="endDate" class="col-sm-2 control-label">End Date:</label>
+        <div class="col-sm-2">
+            <input type="date" id="endDate" class="form-control" ng-model="task.endDate" ng-disabled="task.isParentTask" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="user" class="col-sm-3 control-label">User:</label>
+        <div class="input-group col-sm-6">
+            <input type="text" id="user" class="search-query form-control" ng-disabled="true" ng-model="task.user" />
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="openUser()" type="button" ng-disabled="task.isParentTask">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+    <input type="submit" value="{{task.submitLabel}}" class="btn btn-primary col-sm-offset-3" />
+    <input type="reset" value="Reset" ng-click="ResetClick()" class="btn" /> <br />
+</form>
+
+<div ng-controller="taskController as $ctrl">
+    <script type="text/ng-template" id="selectProjectModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select a project:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="container">
+                <div class="input-group col-sm-12">
+                    <input type="text" id="project" class="search-query form-control" placeholder="Search..." ng-model="project.searchKeyword" />
+                </div>
+            </div>
+            <ul>
+                <li ng-repeat="item in $ctrl.items | filter: project.searchKeyword">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected project: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        </div>
+    </script>
 </div>
+
+<div ng-controller="taskController as $ctrl">
+    <script type="text/ng-template" id="selectParentTaskModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select a parent task:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="container">
+                <div class="input-group col-sm-12">
+                    <input type="text" id="parentTask" class="search-query form-control" placeholder="Search..." ng-model="parentTask.searchKeyword" />
+                </div>
+            </div>
+            <ul>
+                <li ng-repeat="item in $ctrl.items | filter: parentTask.searchKeyword">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected parent task: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        </div>
+    </script>
+</div>
+
+<div ng-controller="taskController as $ctrl">
+    <script type="text/ng-template" id="selectUserModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select a user:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="container">
+                <div class="input-group col-sm-12">
+                    <input type="text" id="parentTask" class="search-query form-control" placeholder="Search..." ng-model="user.searchKeyword" />
+                </div>
+            </div>
+            <ul>
+                <li ng-repeat="item in $ctrl.items | filter: user.searchKeyword">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected user: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        </div>
+    </script>
+</div>
+

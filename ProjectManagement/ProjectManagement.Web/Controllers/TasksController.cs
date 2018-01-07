@@ -1,8 +1,6 @@
-﻿using System;
+﻿using ProjectManagement.Business;
+using ProjectManagement.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace ProjectManagement.API.Controllers
@@ -10,30 +8,30 @@ namespace ProjectManagement.API.Controllers
     public class TasksController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Task> Get()
         {
-            return new string[] { "value1", "value2" };
+            TasksBusiness tasksBusiness = new TasksBusiness();
+            return tasksBusiness.GetTasks();
         }
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public bool Post([FromBody]Task value)
         {
-        }
+            bool status = false;
+            try
+            {
+                TasksBusiness tasksBusiness = new TasksBusiness();
+                tasksBusiness.CreateTask(value);
+                status = true;
+            }
+            catch
+            {
+                status = false;
+                throw;
+            }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+            return status;
         }
     }
 }

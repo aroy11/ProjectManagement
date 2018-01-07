@@ -1,1 +1,71 @@
-﻿<div>view task</div>
+﻿<div>
+    <label for="project" class="col-sm-1 control-label">Project:</label>
+    <div class="input-group col-sm-6">
+        <input type="text" id="project" class="search-query form-control" ng-disabled="true" ng-model="task.project" />
+        <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="open()" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</div>
+
+<div class="container">
+    <label class="control-label">Sort Task By:</label>
+    <button class="btn btn-primary" ng-click="Order('0')">Start Date</button>
+    <button class="btn btn-primary" ng-click="Order('1')">End Date</button>
+    <button class="btn btn-primary" ng-click="Order('2')">Priority</button>
+</div>
+
+<ul class="list-group" id="tasksList">
+    <li class="list-group-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">Task</div>
+                <div class="col-sm-2">Parent</div>
+                <div class="col-sm-2">Priority</div>
+                <div class="col-sm-2">Start</div>
+                <div class="col-sm-2">End</div>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item" ng-repeat="task in tasks | filter: task.searchKeyword">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">{{task.task_Name}}</div>
+                <div class="col-sm-2">{{task.parentTask.parent_Task}}</div>
+                <div class="col-sm-2">{{task.priority}}</div>
+                <div class="col-sm-2">{{task.start_Date | date: 'MM-dd-yyyy'}}</div>
+                <div class="col-sm-2">{{task.end_Date | date: 'MM-dd-yyyy'}}</div>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="button" ng-click="EditTask(task)">Edit</button>
+                <button class="btn btn-primary" type="button">End Task</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div ng-controller="viewtaskController as $ctrl">
+    <script type="text/ng-template" id="selectProjectModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Select a project:</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="container">
+                <div class="input-group col-sm-12">
+                    <input type="text" id="project" class="search-query form-control" placeholder="Search..." ng-model="task.searchKeyword" />
+                </div>
+            </div>
+            <ul>
+                <li ng-repeat="item in $ctrl.items | filter: task.searchKeyword">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected project: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        </div>
+    </script>
+</div>
