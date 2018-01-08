@@ -3,18 +3,29 @@
 
     angular
         .module('app.task', ['projectManagement'])
-        .controller('taskController', ['$scope', 'apiUrl', 'dataFetcher', '$filter', '$uibModal',
+        .controller('taskController', ['$scope', 'apiUrl', 'dataFetcher', '$filter', '$uibModal', 'editedTask', '$location',
 
-    function ($scope, apiUrl, dataFetcher, $filter, $uibModal) {
-        $scope.tasks = [];
-        $scope.task = {};
-        $scope.task.priority = 0;
-        $scope.task.submitLabel = 'Add';
+    function ($scope, apiUrl, dataFetcher, $filter, $uibModal, editedTask, $location) {
 
-        $scope.$on('updatedTask', function (events, args) {
-            console.log('subscribed');
-            $scope.task = args;
-        })
+        var editTask = editedTask.getTask();
+        if (angular.equals(editTask, {})) {
+            $scope.tasks = [];
+            $scope.task = {};
+            $scope.task.priority = 0;
+            $scope.task.submitLabel = 'Add';
+        }
+        else {
+            $scope.task = {};
+            $scope.task.projectId = editTask.task_ID;
+            $scope.task.project = editTask.project.project_Name;
+            $scope.task.taskDescription = editTask.task_Name;
+            $scope.task.isParentTask = false;
+            $scope.task.priority = editTask.priority;
+            $scope.task.parentTask = editTask.parentTask.parent_Task;
+            $scope.task.startDate = new Date(editTask.start_Date);
+            $scope.task.endDate = new Date(editTask.end_Date);
+            $scope.task.submitLabel = 'Update';
+        }
 
         $scope.GetAllProjects = function () {
             var url = apiUrl.getApiUrl('projectsApi');
@@ -36,7 +47,7 @@
                        });
         }
 
-        
+
 
         $scope.GetAllParentTasks = function () {
             var url = apiUrl.getApiUrl('parenttasksApi');
@@ -74,11 +85,18 @@
                 };
             }
 
-           
+
             dataFetcher._postData(url, task)
                 .then(function (data) {
                     if (data == true) {
-                        $scope.ResetForm();
+                        if ($scope.task.submitLabel == 'Update') {
+                            var nullTask = {};
+                            editedTask.setTask(nullTask);
+                            $location.path('/viewtask');
+                        }
+                        else {
+                            $scope.ResetForm();
+                        }
                     }
                 });
         }
@@ -86,7 +104,16 @@
         $scope.ResetClick = function () {
             $scope.ResetForm();
         }
-                
+
+        $scope.ResetControlsForParentTask = function () {
+            if ($scope.task.isParentTask) {
+                $scope.task.priority = 0;
+                $scope.task.parentTask = '';
+                $scope.task.startDate = null;
+                $scope.task.endDate = null;
+            }
+        }
+
         Date.prototype.addDays = function (days) {
             var dat = new Date(this.valueOf());
             dat.setDate(dat.getDate() + days);
@@ -142,7 +169,7 @@
                 controllerAs: '$ctrl',
                 resolve: {
                     items: function () {
-                        
+
                         var parentTaskNames = $scope.parentTasks.map(function (v) {
                             return v.parent_Task;
                         });

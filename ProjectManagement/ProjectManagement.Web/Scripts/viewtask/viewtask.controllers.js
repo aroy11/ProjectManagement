@@ -3,9 +3,9 @@
 
     angular
         .module('app.viewtask', ['projectManagement'])
-        .controller('viewtaskController', ['$scope', 'apiUrl', 'dataFetcher', '$filter', '$uibModal', '$rootScope', '$location',
+        .controller('viewtaskController', ['$scope', 'apiUrl', 'dataFetcher', '$filter', '$uibModal', '$rootScope', '$location', 'editedTask',
 
-    function ($scope, apiUrl, dataFetcher, $filter, $uibModal, $rootScope, $location) {
+    function ($scope, apiUrl, dataFetcher, $filter, $uibModal, $rootScope, $location, editedTask) {
         $scope.tasks = [];
         $scope.task = {};
 
@@ -35,7 +35,7 @@
 
 
         $scope.EditTask = function (selectedTask) {
-            $rootScope.$broadcast('updatedTask', 'test');
+            editedTask.setTask(selectedTask);
             $location.path('/tasks');
         }
 
@@ -75,6 +75,7 @@
                 }
             });
             modalInstance.result.then(function (selectedItem) {
+                $scope.task.project = selectedItem;
                 $scope.tasks = $filter('filter')($scope.allTasks, { 'project': { 'project_Name': selectedItem } });
             });
         };

@@ -22,7 +22,7 @@
         </div>
         <div class="input-group col-sm-3">
             <span class="input-group-addon">
-                <input type="checkbox" id="isParent" name="isParent" ng-model="task.isParentTask">
+                <input type="checkbox" id="isParent" name="isParent" ng-model="task.isParentTask" ng-change="ResetControlsForParentTask();">
             </span>
             <label for="isParent" class="form-control">Is Parent Task?</label>
         </div>

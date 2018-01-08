@@ -145,5 +145,17 @@
                         return apiEndPoints[key] ? apiEndPoints[key] : undefined;
                     }
                 }
-]);
+])
+.service('editedTask', function () {
+    var newTask = {};
+
+    return {
+        getTask: function () {
+            return newTask;
+        },
+        setTask: function (value) {
+            newTask = value;
+        }
+    };
+});
 })(angular);

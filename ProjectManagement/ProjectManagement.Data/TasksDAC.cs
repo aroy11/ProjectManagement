@@ -40,10 +40,25 @@ namespace ProjectManagement.Data
         public Task Create(Task task)
         {
             ProjectManagementEntities ctx = ProjectManagementEntities.Context;
-
+            Task editedTask = null;
             try
             {
-                ctx.Tasks.AddObject(task);
+
+                if (!ctx.Tasks.Any(x => x.Task_ID == task.Task_ID))
+                {
+                    ctx.Tasks.AddObject(task);
+                }
+                else
+                {
+                    editedTask = ctx.Tasks.FirstOrDefault(x => x.Task_ID == task.Task_ID);
+                    editedTask.Project_ID = task.Project_ID;
+                    editedTask.Start_Date = task.Start_Date;
+                    editedTask.End_Date = task.End_Date;
+                    editedTask.Task_Name = task.Task_Name;
+                    editedTask.Status = task.Status;
+                    editedTask.Priority = task.Priority;
+                    editedTask.Parent_ID = task.Parent_ID;
+                }
                 ctx.SaveChanges();
             }
             catch (Exception ex)
